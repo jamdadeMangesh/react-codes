@@ -7,7 +7,7 @@ export function Buttons(props : {
     buttonClassName: string;
     buttonSize: string;
     isDisabled?: boolean;
-    showIcon?: string;
+    showIcon?: boolean;
     buttonIcon?: string;
 }){
     const {
@@ -29,9 +29,10 @@ export function Buttons(props : {
             <div className="custom-button__title">
                {buttonText}
             </div>
+            {showIcon && 
             <div className="custom-button__icon">
-               <i className="fa fa-pencil"></i>
-            </div>
+               <i className={`fa fa-${buttonIcon}`}></i>
+            </div>}
         </button>
     )
 }

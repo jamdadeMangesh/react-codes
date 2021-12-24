@@ -14,9 +14,14 @@
         text-decoration: none;
     }
     &__title{
-        font-size: 15px;
-        font-weight: 600;
+        font-size: $fs16;
+        font-weight: $fw400;
         color: #000;
         text-decoration: none;
     }
+}
+.disabled{
+    display: block;
+    pointer-events: none;
+    opacity: 0.4;
 }

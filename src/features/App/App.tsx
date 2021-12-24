@@ -11,6 +11,8 @@ import {
 import { ButtonsList } from '../../components/Buttons/ButtonsList';
 import { Navigation } from '../Navigation/Navigation';
 import { DataWithApi } from '../DataWithApi/DataWithApi';
+import { Checkboxes } from '../Checkboxes/Checkboxes';
+import { ToastsList } from '../Toasts/Toasts';
 
 function App() {
 	return (
@@ -22,6 +24,8 @@ function App() {
 						<Route path='/home' element={<Home/>} />
 						<Route path='/buttons' element={<ButtonsList/>} />
 						<Route path='/data-with-api' element={<DataWithApi/>} />
+						<Route path='/checkboxes' element={<Checkboxes/>} />
+						<Route path='/toasts' element={<ToastsList/>} />
 					</Routes>
 				</Router>
 			</div>

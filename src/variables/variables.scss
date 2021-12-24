@@ -1,4 +1,4 @@
-$fontFamily: 'Montserrat', sans-serif;
+$fontFamily: 'Roboto', sans-serif;
 $primaryColor: #2196f3;
 
 //MIXINS
@@ -11,3 +11,14 @@ $primaryColor: #2196f3;
      -moz-box-shadow: $shadow;       
           box-shadow: $shadow;
 }
+$fs14: 14px;
+$fs16: 16px;
+$fs18: 18px;
+$fs20: 20px;
+$fs22: 22px;
+
+$fw400: 400;
+$fw500: 500;
+$fw600: 600;
+$fw700: 700;
+$fw800: 800;

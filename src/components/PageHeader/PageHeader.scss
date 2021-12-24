@@ -1,0 +1,17 @@
+@import "../../variables/variables.scss";
+.page-header{
+	display: flex;
+	flex-direction: row;
+    padding: 20px 0px;
+    border-bottom: 1px solid #f1f1f1;
+    &__title{
+        font-size: $fs18;
+        font-weight: $fw500;
+        flex: 1 auto;
+    }
+	&__back{
+		color: #f00;
+		font-weight: $fw400;
+		flex: 0 auto;
+	}
+}

@@ -3,7 +3,8 @@
     padding: 10px 20px;
     border: 0px;
     color: #fff;
-    margin: 20px 20px 20px 0px;
+    margin: 10px 20px 10px 0px;
+    display: inline-flex;
     @include box-shadow(0px 9px 18px 1px rgb(0 0 0 / 20%));
     @include border-radius(5px);
     &:hover{
@@ -12,6 +13,9 @@
     }
     &:focus{
         outline: none;
+    }
+    &__icon{
+        padding-left: 10px;
     }
 }
 .button-primary{
@@ -29,4 +33,16 @@
 }
 .button-large{
     font-size: 16px;
+}
+.button-success{
+    background-color: #5cb85c;
+}
+.button-warning{
+    background-color: #f0ad4e;
+}
+.button-info{
+    background-color: #5bc0de;
+}
+.button-danger{
+    background-color: #d9534f;
 }
