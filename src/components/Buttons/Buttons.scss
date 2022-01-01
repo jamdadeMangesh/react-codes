@@ -46,3 +46,6 @@
 .button-danger{
     background-color: #d9534f;
 }
+.custom-button:disabled {
+    opacity: 0.6;
+}

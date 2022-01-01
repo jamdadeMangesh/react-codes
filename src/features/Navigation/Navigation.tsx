@@ -60,7 +60,7 @@ export function Navigation (){
             <h5 className="mb-4 mt-4">Functional Component</h5>
             <div className="row">
                 <div className="col-6 col-md-3">
-                    <Link to ="/" className="disabled">
+                    <Link to ="/data-with-json" >
                         <div className="navigation-card mb-4">
                             <div className="navigation-card__title">
                                 Data with JSON

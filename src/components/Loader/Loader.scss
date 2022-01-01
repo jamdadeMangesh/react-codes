@@ -1,0 +1,26 @@
+@import "../../variables/variables.scss";
+
+
+.loading {
+    height: 0;
+    width: 0;
+    padding: 15px;
+    border: 6px solid #ccc;
+    border-right-color: #888;
+    border-radius: 22px;
+    animation: rotateLoader 1s infinite linear;
+    -webkit-animation: rotateLoader 1s infinite linear;
+    /* left, top and position just for the demo! */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+@keyframes rotateLoader {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}

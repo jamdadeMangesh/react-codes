@@ -1,0 +1,13 @@
+.inputBox{
+    padding: 8px 10px;
+    font-size: 13px;
+    border: 1px solid #a9a9a9;
+    border-radius: 4px;
+    width: 250px;
+}
+.position-dropdown{
+	@extend .inputBox;
+}
+.timeout-input{
+    @extend .inputBox;
+}
