@@ -4,15 +4,13 @@ import './App.scss';
 import {
     BrowserRouter as Router,
     Route,
-	Routes,
-	Navigate,
-	Link
+	Routes
   } from "react-router-dom";
 import { ButtonsList } from '../../components/Buttons/ButtonsList';
-import { Navigation } from '../Navigation/Navigation';
 import { DataWithApi } from '../DataWithApi/DataWithApi';
 import { Checkboxes } from '../Checkboxes/Checkboxes';
 import { ToastsList } from '../Toasts/Toasts';
+import { DataWithJSON } from '../DataWithJSON/DataWithJson';
 
 function App() {
 	return (
@@ -26,6 +24,7 @@ function App() {
 						<Route path='/data-with-api' element={<DataWithApi/>} />
 						<Route path='/checkboxes' element={<Checkboxes/>} />
 						<Route path='/toasts' element={<ToastsList/>} />
+						<Route path='/data-with-json' element={<DataWithJSON/>} />
 					</Routes>
 				</Router>
 			</div>
