@@ -1,7 +1,5 @@
 import React from "react";
 import {
-    BrowserRouter as Router,
-    Route,
     Link,
   } from "react-router-dom";
 import "./Navigation.scss";
@@ -87,7 +85,7 @@ export function Navigation (){
                     </Link>
                 </div>
                 <div className="col-6 col-md-3">
-                    <Link to ="/" className="disabled">
+                    <Link to ="/redux">
                         <div className="navigation-card mb-4">
                             <div className="navigation-card__title">
                                 Redux

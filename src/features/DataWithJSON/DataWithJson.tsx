@@ -1,25 +1,7 @@
-import axios from "axios";
-import React, { useEffect } from "react";
+import React from "react";
 import { PageHeader } from "../../components/PageHeader/PageHeader";
-//import "./DataWithApi.scss";
-import { Loader } from './../../components/Loader/Loader';
 
-export function DataWithJSON (){
-    const [users, setUsers] = React.useState([]);
-    const [loading, setLoading] = React.useState(true);
-    async function getApi() {
-        const response = await axios.get("https://jsonplaceholder.typicode.com/users/")
-        const data = response["data"];
-        setUsers(data);
-        if(data) {
-            setLoading(false);
-        }
-        return data;
-    }
-    useEffect(() => {
-        getApi()
-    },[])
-
+export function DataWithJSON() {
     const dataWithJson = [
         {
             "id": 1,
@@ -64,14 +46,14 @@ export function DataWithJSON (){
             "avatar": "https://reqres.in/img/faces/6-image.jpg"
         }
     ];
-    
+
     return (
-        <>  
-            <PageHeader pageTitle="Data With JSON"></PageHeader>  
+        <>
+            <PageHeader pageTitle="Data With JSON"></PageHeader>
             <table className="table table-bordered fs14 dataTable">
                 <thead>
                     <tr>
-                        
+
                         <th>Id</th>
                         <th>Avatar</th>
                         <th>Firstname</th>
@@ -80,14 +62,13 @@ export function DataWithJSON (){
                     </tr>
                 </thead>
                 <tbody>
-                    {!loading ? 
-                        <>
+                    <>
                         {dataWithJson?.map((user: any) => {
                             return (
                                 <>
                                     <tr key={user.id}>
                                         <td>{user.id}</td>
-                                        <td><img src={user.avatar} alt={user.first_name}/></td>
+                                        <td><img src={user.avatar} alt={user.first_name} /></td>
                                         <td>{user.first_name}</td>
                                         <td>{user.last_name}</td>
                                         <td>{user.email}</td>
@@ -95,8 +76,7 @@ export function DataWithJSON (){
                                 </>
                             )
                         })}
-                        </>
-                    : <Loader></Loader> }
+                    </>
                 </tbody>
             </table>
         </>

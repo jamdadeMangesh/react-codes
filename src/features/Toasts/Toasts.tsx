@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { PageHeader } from "../../components/PageHeader/PageHeader";
 import { Toast } from "../../components/Toast/Toast";
 import successIcon from "../../images/success.svg";
@@ -104,12 +104,12 @@ export function ToastsList() {
 					buttonColor={btn.className}
 					buttonSize="large"
 					buttonClassName="update-button"
-					isDisabled={(position == "") && (dismissTime > 0) ? true : false}
+					isDisabled={(position === "") && (dismissTime > 0) ? true : false}
 					onButtonClick={() => showToast(btn.type)}
 				></Buttons>
 			))}
 			<div className="selectPosition mt-4">
-				<p className="fs14 mb-10">Set Position : {position == "" ? "Please select position" : position}</p>
+				<p className="fs14 mb-10">Set Position : {position === "" ? "Please select position" : position}</p>
 				<select name="position" value={position} onChange={selectPosition} className="position-dropdown">
 					<option value="">Select Position</option>
 					<option value="top-right">Top Right</option>
@@ -120,7 +120,7 @@ export function ToastsList() {
 			</div>
 
 			<div className="mt-4">
-				<p className="fs14 mb-10">Set Timeout : {dismissTime == 0 ? "Please add dismiss timeout" : dismissTime}</p>
+				<p className="fs14 mb-10">Set Timeout : {dismissTime === 0 ? "Please add dismiss timeout" : dismissTime}</p>
 				<input className="timeout-input fs14" type="number" placeholder="Dismiss timeout in milliseconds" onChange={setDismissTimeout}/>
 			</div>
 			<Toast toastList={list} toastPosition={position} autoDelete={true} autoDeleteTimeout={dismissTime}></Toast>
