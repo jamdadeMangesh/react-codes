@@ -33,7 +33,7 @@ export function DataWithApi (){
                                     <h5 className="card-title">{user.name}</h5>
                                     <h6 className="card-subtitle mb-2 text-muted">{user.email}</h6>
                                     <p className="card-text">{user.address.street}, {user.address.suite}, {user.address.city}, {user.address.zipcode}</p>
-                                    <a href="#" className="card-link">{user.website}</a>
+                                    <p className="card-link">{user.website}</p>
                                 </div>
                                 </div>
                         </div>

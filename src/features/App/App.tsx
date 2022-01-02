@@ -11,6 +11,8 @@ import { DataWithApi } from '../DataWithApi/DataWithApi';
 import { Checkboxes } from '../Checkboxes/Checkboxes';
 import { ToastsList } from '../Toasts/Toasts';
 import { DataWithJSON } from '../DataWithJSON/DataWithJson';
+import ReduxMovies from '../ReduxMovies/ReduxMovies';
+import MovieDetail from './../../components/Movies/MovieDetail/MovieDetail';
 
 function App() {
 	return (
@@ -25,6 +27,8 @@ function App() {
 						<Route path='/checkboxes' element={<Checkboxes/>} />
 						<Route path='/toasts' element={<ToastsList/>} />
 						<Route path='/data-with-json' element={<DataWithJSON/>} />
+						<Route path='/redux' element={<ReduxMovies />} />
+						<Route path='/movie/:imdbID' element={<MovieDetail />} />
 					</Routes>
 				</Router>
 			</div>

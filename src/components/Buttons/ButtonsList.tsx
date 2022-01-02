@@ -1,5 +1,4 @@
-import React, { useRef } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 import { PageHeader } from "../PageHeader/PageHeader";
 import { Buttons } from "./Buttons";
 
@@ -14,7 +13,6 @@ export function ButtonsList(){
     const deleteStatus = () => {
         alert("Delete Status");
     }
-    const textAreaRef = useRef(null);
     return(
         <>
             <PageHeader pageTitle="Buttons"></PageHeader>

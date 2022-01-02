@@ -1,0 +1,70 @@
+@import "../../../variables/variables.scss";
+
+.movie-detail{
+    &-wrapper{
+        padding: 30px 0px;
+        display: flex;
+        @media (min-width:320px) and (max-width:767px){
+            display: block;
+        }
+    }
+    &-info{
+        flex: 1 1 auto;
+        padding-left: 20px;
+    }
+    &-image{
+        flex: 0 0 auto;
+        img{
+            @media (min-width:320px) and (max-width:767px){
+                width: 100%;
+            }
+        }
+    }
+    &-title{
+        font-size: 30px;
+        font-weight: $fw700;
+    }
+    &-ratings{
+        font-size: 12px;
+        font-family: $fw600;
+        span{
+            padding-right: 20px;
+            margin-bottom: 5px;
+            display: inline-block;
+        } 
+    }
+    &-plot{
+        font-size: 13px;
+        line-height: 23px;
+    }
+    &-back{
+        color: red;
+        text-align: right;
+        padding: 20px 0px;
+        border-bottom: 1px solid #f1f1f1;
+        cursor: pointer;
+    }
+    &-cast{
+        font-size: 12px;
+        div{
+            margin-top: 10px;
+        }
+        span{
+            width: 90px;
+            display: inline-block;
+        }
+    }
+}
+.rating-color{
+    color: #FF9529;
+}
+.votes-color{
+    color: #228B22;
+}
+.time-color{
+    color: #FF6347;
+}
+.date-color{
+    color: #2196f3;
+}
+

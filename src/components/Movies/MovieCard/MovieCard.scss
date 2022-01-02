@@ -1,0 +1,29 @@
+@import "../../../variables//variables.scss";
+
+.movie-list{
+    background-color: #fff;
+    border: 1px solid #eee;
+    @include box-shadow(0px 9px 18px 1px rgb(0 0 0 / 20%));
+    border-radius: 4px;
+    margin-bottom: 30px;
+    transition: 0.3s ease-in-out;
+    &:hover{
+        @include box-shadow(0px 9px 28px 1px rgb(0 0 0 / 40%));
+    }
+}
+.movie-info{
+    padding: 15px;
+}
+.movie-title, .movie-year{
+    font-size: $fs14;
+}
+.movie-image{
+    height: 300px;
+    overflow: hidden;
+    @media (min-width:320px) and (max-width:767px){
+        width:100%;
+        img{
+            width:100%;
+        }
+    }
+}

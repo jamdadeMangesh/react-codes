@@ -24,10 +24,9 @@ export const Toast = (props: any) => {
 		list.splice(index, 1);
 		setList([...list]);
 	}
-	console.log("position: " + toastPosition);
 	return (
 		<>
-			{toastPosition && toastPosition!= "" ? 
+			{toastPosition && toastPosition !== "" ? 
 			<div className={`toast-container ${toastPosition}`}>
 				{list.map((toast: any, i: any) => (
 					<div
