@@ -1,7 +1,6 @@
 import React from "react";
 import { Buttons } from "../../components/Buttons/Buttons";
 import { PageHeader } from "../../components/PageHeader/PageHeader";
-import { AddData } from "./AddData/AddData";
 import "./PostAPI.scss";
 import { ShowData } from "./ShowData/ShowData";
 import { useNavigate  } from "react-router-dom";

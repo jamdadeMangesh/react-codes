@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Navigate, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 import { Buttons } from "../../../components/Buttons/Buttons";
 import { PageHeader } from "../../../components/PageHeader/PageHeader";
 
@@ -9,7 +9,6 @@ export function AddData() {
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
     const [designation, setDesignation] = useState("");
-    const [btnDisabled, setBtnDisabled] = useState(false);
     const navigate = useNavigate();
     const postData = () => {
         const empData = {
@@ -83,7 +82,6 @@ export function AddData() {
                     buttonText="Submit" 
                     buttonColor="primary" 
                     buttonSize="medium"
-                    isDisabled={btnDisabled}
                     buttonClassName="submit-button"
                     onButtonClick={() => postData()}
                 ></Buttons>
