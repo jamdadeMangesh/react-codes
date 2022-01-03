@@ -20,7 +20,6 @@ export function Checkboxes (){
     const [showValue, setShowValue] = useState("");
     const [checkboxValue, setCheckboxValue] = useState(new Array(checkboxes.length).fill(false));
     const handleOnChange = (position: any) => {
-        console.log("position: " +position);
         const updatedCheckedState: any = checkboxValue.map((item, index) =>
           index === position ? !item : item
         );

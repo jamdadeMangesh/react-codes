@@ -39,7 +39,6 @@ export function ToastsList() {
 	];
 
 	const showToast = (types: any) => {
-		console.log("Types: " + types);
 		let toastProperties = null;
 		const id =  Math.floor((Math.random() * 100) + 1);
 
