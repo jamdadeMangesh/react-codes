@@ -25,6 +25,7 @@ export function Buttons(props : {
             disabled={isDisabled} 
             className={`custom-button button-${buttonColor} button-${buttonSize} ${buttonClassName}`} 
             onClick={onButtonClick}
+            type="button"
         >
             <div className="custom-button__title">
                {buttonText}

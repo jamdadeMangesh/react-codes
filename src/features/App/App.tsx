@@ -13,6 +13,9 @@ import { ToastsList } from '../Toasts/Toasts';
 import { DataWithJSON } from '../DataWithJSON/DataWithJson';
 import ReduxMovies from '../ReduxMovies/ReduxMovies';
 import MovieDetail from './../../components/Movies/MovieDetail/MovieDetail';
+import { PostAPI } from '../PostAPI/PostAPI';
+import { AddData } from '../PostAPI/AddData/AddData';
+
 
 function App() {
 	return (
@@ -29,6 +32,8 @@ function App() {
 						<Route path='/data-with-json' element={<DataWithJSON/>} />
 						<Route path='/redux' element={<ReduxMovies />} />
 						<Route path='/movie/:imdbID' element={<MovieDetail />} />
+						<Route path='/post-api' element={<PostAPI />} />
+						<Route path='/post-api/add' element={<AddData />} />
 					</Routes>
 				</Router>
 			</div>

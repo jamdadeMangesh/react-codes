@@ -11,6 +11,9 @@ export function Navigation (){
                 <div className="col-6 col-md-3">
                     <Link to ="/buttons">
                         <div className="navigation-card mb-4">
+                            <div className="navigation-card__count">
+                                1
+                            </div>
                             <div className="navigation-card__title">
                                 Buttons
                             </div>
@@ -20,6 +23,9 @@ export function Navigation (){
                 <div className="col-6 col-md-3">
                     <Link to ="/checkboxes">
                         <div className="navigation-card mb-4">
+                            <div className="navigation-card__count">
+                                2
+                            </div>
                             <div className="navigation-card__title">
                                 Checkboxes
                             </div>
@@ -29,6 +35,9 @@ export function Navigation (){
                 <div className="col-6 col-md-3">
                     <Link to ="/" className="disabled">
                         <div className="navigation-card mb-4">
+                            <div className="navigation-card__count">
+                                3
+                            </div>
                             <div className="navigation-card__title">
                                 Radio Buttons
                             </div>
@@ -38,6 +47,9 @@ export function Navigation (){
                 <div className="col-6 col-md-3">
                     <Link to ="/toasts">
                         <div className="navigation-card mb-4">
+                            <div className="navigation-card__count">
+                                4
+                            </div>
                             <div className="navigation-card__title">
                                 Toast
                             </div>
@@ -47,6 +59,9 @@ export function Navigation (){
                 <div className="col-6 col-md-3">
                     <Link to ="/" className="disabled">
                         <div className="navigation-card mb-4">
+                            <div className="navigation-card__count">
+                                5
+                            </div>
                             <div className="navigation-card__title">
                                 Tooltips
                             </div>
@@ -60,6 +75,9 @@ export function Navigation (){
                 <div className="col-6 col-md-3">
                     <Link to ="/data-with-json" >
                         <div className="navigation-card mb-4">
+                            <div className="navigation-card__count">
+                                1
+                            </div>
                             <div className="navigation-card__title">
                                 Data with JSON
                             </div>
@@ -69,6 +87,9 @@ export function Navigation (){
                 <div className="col-6 col-md-3">
                     <Link to ="/data-with-api">
                     <div className="navigation-card mb-4">
+                        <div className="navigation-card__count">
+                                2
+                            </div>
                         <div className="navigation-card__title">
                             Data with API
                         </div>
@@ -78,6 +99,9 @@ export function Navigation (){
                 <div className="col-6 col-md-3">
                     <Link to ="/" className="disabled">
                         <div className="navigation-card mb-4">
+                            <div className="navigation-card__count">
+                                3
+                            </div>
                             <div className="navigation-card__title">
                                 Routing
                             </div>
@@ -87,6 +111,9 @@ export function Navigation (){
                 <div className="col-6 col-md-3">
                     <Link to ="/redux">
                         <div className="navigation-card mb-4">
+                            <div className="navigation-card__count">
+                                4
+                            </div>
                             <div className="navigation-card__title">
                                 Redux
                             </div>
@@ -94,10 +121,13 @@ export function Navigation (){
                     </Link>
                 </div>
                 <div className="col-6 col-md-3">
-                    <Link to ="/" className="disabled">
+                    <Link to ="/post-api">
                         <div className="navigation-card mb-4">
+                            <div className="navigation-card__count">
+                                5
+                            </div>
                             <div className="navigation-card__title">
-                                Pagination
+                                POST API
                             </div>
                         </div>
                     </Link>

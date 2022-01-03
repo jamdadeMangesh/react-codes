@@ -20,19 +20,16 @@ const MovieDetail = () => {
             .catch((err) => {
                 console.log("error :" +err);
             });
-            //console.log("Response detail : ", response?.data);
             dispatch(movieDetails(response?.data));
         }
         fetchMovies();
     },[dispatch, imdbID]);
 
     const goBackToMovie = () => {
-        console.log("clicked");
         dispatch(removeMovieDetails());
         navigate("/redux");
     }
     const data = useSelector(getMovieDetails);
-    console.log("movieDetailsData :", data);
     return (
         <>
             <div className="movie-detail-back" onClick={() => goBackToMovie()}>Back</div>

@@ -16,7 +16,6 @@ const movieSlice = createSlice({
         },
         removeMovieDetails: (state) => {
             state.selectedMovieDetails = [];
-            console.log("state.selectedMovieDetails remove :", state.selectedMovieDetails);
         }
     },
 })
