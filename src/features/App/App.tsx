@@ -15,7 +15,8 @@ import ReduxMovies from '../ReduxMovies/ReduxMovies';
 import MovieDetail from './../../components/Movies/MovieDetail/MovieDetail';
 import { PostAPI } from '../PostAPI/PostAPI';
 import { AddData } from '../PostAPI/AddData/AddData';
-
+import { EditData } from '../PostAPI/EditData/EditData';
+import { PaginationView } from '../Pagination/PaginationView';
 
 function App() {
 	return (
@@ -34,6 +35,8 @@ function App() {
 						<Route path='/movie/:imdbID' element={<MovieDetail />} />
 						<Route path='/post-api' element={<PostAPI />} />
 						<Route path='/post-api/add' element={<AddData />} />
+						<Route path='/post-api/edit/:id' element={<EditData />} />
+						<Route path='/pagination' element={<PaginationView />} />
 					</Routes>
 				</Router>
 			</div>

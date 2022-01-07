@@ -1,31 +1,48 @@
-import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router";
-import { PageHeader } from "../../../components/PageHeader/PageHeader";
+import React, { useState } from "react";
+import { useNavigate, useParams } from "react-router";
 import { Buttons } from "../../../components/Buttons/Buttons";
+import { PageHeader } from "../../../components/PageHeader/PageHeader";
 
-
-export function AddData() {
-    const initUser = {firstName: "", lastName: "", email: "", designation: ""}
-    const [formValue, setFormValue] = useState(initUser);
+export function EditData() {
+    const { id } = useParams();
+    const [empInfo, setEmpInfo] = useState<any>([]);
+    // const [firstName, setFirstName] = useState("");
+    // const [lastName, setLastName] = useState("");
+    // const [email, setEmail] = useState("");
+    // const [designation, setDesignation] = useState("");
     
+    const getApiData = async() => {
+        await axios.get(`https://61cd7c867067f600179c5ac9.mockapi.io/react-crud/${id}`)
+            .then((response) => setEmpInfo(response.data))
+    }
+    getApiData();
+    
+
     const navigate = useNavigate();
-    
-    const onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const {name, value} = e.target;
-        setFormValue({...formValue, [name]: value});
-    }
-    const postData = () => {
-        axios.post("https://61cd7c867067f600179c5ac9.mockapi.io/react-crud", formValue)
-        .then(response => navigate("/post-api"));
-    }
+        const onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+            const {name, value} = e.target;
+            setEmpInfo({...empInfo, [name]: value});
+        }
+        const updateData = () => {
+            axios.put(`https://61cd7c867067f600179c5ac9.mockapi.io/react-crud/${id}`, empInfo)
+            .then(response => setEmpInfo(empInfo))
+            .then(response => navigate("/post-api"));
+        }
+        // function resetForm(){
+        //     setFirstName("");
+        //     setLastName("");
+        //     setEmail("");
+        //     setDesignation("");
+        //     return true;
+        // }
     
     return (
         <>
         <PageHeader pageTitle="Add Data"></PageHeader>
         <div className="mt-4 col-md-6 offset-md-3">
             <form>
-                <pre>{JSON.stringify(formValue, undefined, 2)}</pre>
+                <pre>{JSON.stringify(empInfo, undefined, 2)}</pre>
                 <div className="row fs14">
                     <div className="col-md-6">
                         <div className="form-group">
@@ -33,12 +50,10 @@ export function AddData() {
                             <input 
                                 type="text" 
                                 className="form-control" 
-                                name="firstName"
-                                value={formValue.firstName}
+                                value={empInfo.firstName}
                                 onChange={onInputChange}  
                                 placeholder="Enter First Name" 
                             />
-                            {/* <span>{formErrors.firstName}</span> */}
                         </div>
                     </div>
                     <div className="col-md-6">
@@ -47,8 +62,7 @@ export function AddData() {
                             <input 
                                 type="text" 
                                 className="form-control" 
-                                name="lastName"
-                                value={formValue.lastName}
+                                value={empInfo.lastName}
                                 onChange={onInputChange}  
                                 placeholder="Enter Last Name" 
                             />
@@ -62,9 +76,8 @@ export function AddData() {
                         type="email" 
                         className="form-control" 
                         placeholder="Enter email" 
-                        name="email"
-                        value={formValue.email}
-                        onChange={onInputChange}
+                        value={empInfo.email}
+                        onChange={onInputChange}  
                     />
                     
                 </div>
@@ -73,19 +86,18 @@ export function AddData() {
                     <input 
                         type="text" 
                         className="form-control" 
-                        name="designation"
                         placeholder="Enter Designation" 
-                        value={formValue.designation}
-                        onChange={onInputChange}
+                        value={empInfo.designation}
+                        onChange={onInputChange}  
                     />
                 </div>
                 <Buttons 
                     buttonText="Submit" 
                     buttonColor="primary" 
                     buttonSize="medium"
-                    isDisabled={formValue.firstName && formValue.lastName && formValue.email && formValue.designation ? false : true}
+                    isDisabled={empInfo.firstName && empInfo.lastName && empInfo.email && empInfo.designation ? false : true}
                     buttonClassName="submit-button"
-                    onButtonClick={() => postData()}
+                    onButtonClick={() => updateData()}
                 ></Buttons>
                 </form>
         </div>

@@ -97,13 +97,13 @@ export function Navigation (){
                     </Link>
                 </div>
                 <div className="col-6 col-md-3">
-                    <Link to ="/" className="disabled">
+                    <Link to ="/pagination">
                         <div className="navigation-card mb-4">
                             <div className="navigation-card__count">
                                 3
                             </div>
                             <div className="navigation-card__title">
-                                Routing
+                                Pagination
                             </div>
                         </div>
                     </Link>

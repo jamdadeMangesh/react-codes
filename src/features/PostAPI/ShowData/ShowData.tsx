@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect } from "react";
-import { Buttons } from "../../../components/Buttons/Buttons";
+import "../PostAPI.scss";
 
 export function ShowData() {
     const [empInfo, setEmpInfo] = React.useState([]);
@@ -27,7 +27,7 @@ export function ShowData() {
                                 <th scope="col">Email</th>
                                 <th scope="col">Designation</th>
                                 <th scope="col">Delete</th>
-                                <th scope="col">Update</th>
+                                {/* <th scope="col">Update</th> */}
                             </tr>
                         </thead>
                         <tbody>
@@ -39,20 +39,12 @@ export function ShowData() {
                                         <td>{emp.firstName} {emp.lastName}</td>
                                         <td>{emp.email}</td>
                                         <td>{emp.designation}</td>
-                                        <td><Buttons
-                                            buttonText="Delete"
-                                            buttonColor="danger"
-                                            buttonSize="small"
-                                            buttonClassName="add-button"
-                                            onButtonClick={() => onDelete(emp.id)}
-                                        ></Buttons></td>
-                                        <td><Buttons
-                                            buttonText="Update"
-                                            buttonColor="primary"
-                                            buttonSize="small"
-                                            buttonClassName="add-button"
-                                            onButtonClick={() => onDelete(emp.id)}
-                                        ></Buttons></td>
+                                        <td>
+                                            <i className="fa fa-trash color-red" onClick={() => onDelete(emp.id)}></i>
+                                        </td>
+                                        {/* <td>
+                                        <Link to={`/post-api/edit/${emp.id}`}><i className="fa fa-pencil color-blue"></i></Link>
+                                        </td> */}
                                     </tr>
                                 )
                             })}
