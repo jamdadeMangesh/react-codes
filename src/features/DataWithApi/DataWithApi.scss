@@ -2,7 +2,7 @@
 .userCard{
     .card{
         height: 180px;
-        @include box-shadow(0px 9px 18px 1px rgb(0 0 0 / 20%));
+        @include box-shadow(0px 3px 6px 1px rgb(0 0 0 / 20%));
         .card-title{
             font-size: 16px;
             font-weight: 600;
@@ -25,5 +25,13 @@
         border-radius: 50%;
         width: 40px;
         height: 40px;
+    }
+}
+.searchInput{
+    padding: 10px 15px;
+    margin-bottom: 30px;
+    width: 300px;
+    &:focus{
+        outline:none;
     }
 }
