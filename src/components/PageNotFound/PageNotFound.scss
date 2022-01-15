@@ -1,0 +1,32 @@
+@import  "../../variables/variables.scss";
+
+.pageNotFound{
+    &-wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+    &-text{
+        font-weight: 800;
+        font-size: 150px;
+        color: var(--danger);
+        line-height: 150px;
+    }
+    &-subText{
+        font-weight: 800;
+        font-size: 35px;
+        color: var(--dark);
+    }
+    &-link{
+        background: var(--indigo);
+        padding: 12px 30px;
+        margin-top: 30px;
+        color: #fff;
+        display: block;
+    }
+}
+.redirect-button{
+    margin: 20px 0px;
+}

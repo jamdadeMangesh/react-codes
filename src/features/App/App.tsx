@@ -19,6 +19,8 @@ import { EditData } from '../PostAPI/EditData/EditData';
 import { PaginationView } from '../Pagination/PaginationView';
 import { RadioButtons } from '../RadioButtons/RadioButtons';
 import { FilterWithApi } from '../FilterWithApi/FilterWithApi';
+import PageNotFound from './../../components/PageNotFound/PageNotFound';
+import ProgressiveWebApp from './../../components/ProgressiveWebApp/ProgressiveWebApp';
 
 function App() {
 	return (
@@ -26,6 +28,7 @@ function App() {
 			<div className="container">
 				<Router>
 					<Routes>
+						<Route path='*' element={<PageNotFound />} />
 						<Route path='/' element={<Home/>} />
 						<Route path='/home' element={<Home/>} />
 						<Route path='/buttons' element={<ButtonsList/>} />
@@ -41,6 +44,8 @@ function App() {
 						<Route path='/pagination' element={<PaginationView />} />
 						<Route path='/radio' element={<RadioButtons />} />
 						<Route path='/filter-data-with-api' element={<FilterWithApi />} />
+						<Route path='/progressive-web-app' element={<ProgressiveWebApp />} />
+						
 					</Routes>
 				</Router>
 			</div>

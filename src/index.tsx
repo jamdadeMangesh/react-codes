@@ -4,6 +4,7 @@ import './index.css';
 import App from './features/App/App';
 import { Provider } from "react-redux";
 import { store } from './features/ReduxMovies/store';
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
 ReactDOM.render(
   <Provider store={store}>
@@ -13,3 +14,5 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 );
+
+serviceWorkerRegistration.register();

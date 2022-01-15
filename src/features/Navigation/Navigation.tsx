@@ -5,7 +5,7 @@ import {
 import "./Navigation.scss";
 export function Navigation (){
     return (
-        <>
+        <div className="navigation-wrapper">
             <h5 className="mb-4">UI Component</h5>
             <div className="row">
                 <div className="col-6 col-md-3">
@@ -145,6 +145,22 @@ export function Navigation (){
                     </Link>
                 </div>
             </div>
-        </> 
+
+            <h5 className="mb-4 mt-4">Other</h5>
+            <div className="row">
+                <div className="col-6 col-md-3">
+                    <Link to ="/progressive-web-app" >
+                        <div className="navigation-card mb-4">
+                            <div className="navigation-card__count">
+                                1
+                            </div>
+                            <div className="navigation-card__title">
+                                Progressive Web App
+                            </div>
+                        </div>
+                    </Link>
+                </div>
+            </div>
+        </div> 
     )
 }

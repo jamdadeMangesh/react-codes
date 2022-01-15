@@ -16,7 +16,6 @@ export function FilterWithApi() {
         const data = await getAllProducts();
         setProducts(data);
     };
-    console.log("Radio Value :", radioValue);
 
     const theAllowedCategory: string[] = [];
     let uniqueAllowedCategory: string[] = [];
@@ -26,13 +25,8 @@ export function FilterWithApi() {
         }
         uniqueAllowedCategory = Array.from(new Set(theAllowedCategory));
     }
-    function onRadioButtonChange(e: any) {
-        setRadioValue(e.target.value);
-        getFilteredData();
-    }
 
-    const getFilteredData = () => {
-        console.log("asdasd");
+    useEffect(() => {
         const theFilteredCategory: string[] = [];
         for (let i = 0; i < getProducts.length; i++) {
             if (radioValue === getProducts[i].category) {
@@ -44,19 +38,8 @@ export function FilterWithApi() {
         } else {
             setFilteredResults(getProducts);
         }
-        console.log("theFilteredCategory :", theFilteredCategory);
-    }
+    }, [getProducts, radioValue]);
 
-    // const categoryResults = async () => {
-    //     let dataByCategory: string[] = [];
-    //     dataByCategory = await getMealByCategory(radioValue);
-    //     console.log('dataByCategory :' ,dataByCategory);
-    //     return dataByCategory;
-    // };
-    // categoryResults();
-    // if(radioValue && radioValue != "") {
-    //     getFilteredData();
-    // }
     return (
         <>
             <PageHeader pageTitle="Filter Data With API"></PageHeader>
@@ -65,7 +48,7 @@ export function FilterWithApi() {
                     <span key={index}>
                         <Radio
                             key={index}
-                            changed={onRadioButtonChange}
+                            changed={(e: any) => setRadioValue(e.target.value)}
                             id={item}
                             isSelected={radioValue === item}
                             value={item}
@@ -81,7 +64,7 @@ export function FilterWithApi() {
                     radioValue.length > 0 ? 
                     filteredResults.map((item: any, index: any) => {
                         return (
-                            <div className="col-md-3 col-6" key={index}>
+                            <div className="col-md-3" key={index}>
                                 <div className="foodCard">
                                     <div className="foodCard-img">
                                         <img
@@ -104,7 +87,7 @@ export function FilterWithApi() {
                         );
                     }) :  getProducts.map((item: any, index: any) => {
                         return (
-                            <div className="col-md-3 col-6" key={index}>
+                            <div className="col-md-3" key={index}>
                                 <div className="foodCard">
                                     <div className="foodCard-img">
                                         <img
