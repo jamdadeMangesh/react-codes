@@ -33,7 +33,7 @@ export function Navigation (){
                     </Link>
                 </div>
                 <div className="col-6 col-md-3">
-                    <Link to ="/" className="disabled">
+                    <Link to ="/radio">
                         <div className="navigation-card mb-4">
                             <div className="navigation-card__count">
                                 3
@@ -128,6 +128,18 @@ export function Navigation (){
                             </div>
                             <div className="navigation-card__title">
                                 POST API
+                            </div>
+                        </div>
+                    </Link>
+                </div>
+                <div className="col-6 col-md-3">
+                    <Link to ="/filter-data-with-api">
+                        <div className="navigation-card mb-4">
+                            <div className="navigation-card__count">
+                                6
+                            </div>
+                            <div className="navigation-card__title">
+                                Filter Data with API
                             </div>
                         </div>
                     </Link>

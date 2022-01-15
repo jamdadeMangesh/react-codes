@@ -1,0 +1,45 @@
+@import "../../variables/variables.scss";
+.foodCard {
+  @include box-shadow(0px 3px 6px 1px #00000033);
+  margin-bottom: 30px;
+  position: relative;
+  border-radius: 5px;
+  &-img {
+    height: 250px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      border-radius: 5px 5px 0px 0px;
+    }
+  }
+  &-info {
+    display: flex;
+    padding: 15px;
+    align-items: center;
+    background: #f1f1f1;
+  }
+  &-name {
+    font-size: 14px;
+    flex: 1 1 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 70%;
+    padding-right: 30px;
+  }
+  &-area {
+    font-size: 12px;
+  }
+  &-tags {
+    position: absolute;
+    top: 20px;
+    right: 0px;
+    background: #5cb85c;
+    font-size: 11px;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 5px 0px 0px 5px;
+  }
+}

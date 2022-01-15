@@ -17,6 +17,8 @@ import { PostAPI } from '../PostAPI/PostAPI';
 import { AddData } from '../PostAPI/AddData/AddData';
 import { EditData } from '../PostAPI/EditData/EditData';
 import { PaginationView } from '../Pagination/PaginationView';
+import { RadioButtons } from '../RadioButtons/RadioButtons';
+import { FilterWithApi } from '../FilterWithApi/FilterWithApi';
 
 function App() {
 	return (
@@ -37,6 +39,8 @@ function App() {
 						<Route path='/post-api/add' element={<AddData />} />
 						<Route path='/post-api/edit/:id' element={<EditData />} />
 						<Route path='/pagination' element={<PaginationView />} />
+						<Route path='/radio' element={<RadioButtons />} />
+						<Route path='/filter-data-with-api' element={<FilterWithApi />} />
 					</Routes>
 				</Router>
 			</div>
