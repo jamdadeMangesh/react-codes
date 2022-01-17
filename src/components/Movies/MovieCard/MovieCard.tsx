@@ -1,15 +1,21 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { setMovieDetailsId } from "../../../features/ReduxMovies/MovieSlice/MovieSlice";
 import "./MovieCard.scss";
 
 export const MovieCard = (props: any) => {
     const { data } = props;
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const redirectToMovieDetails= (movieId: any) => {
+        dispatch(setMovieDetailsId(movieId));
+        navigate("/movie-details");
+    }
     return (
         <>
-        
         <div className="col-sm col-lg-3 col-md-6">
-        <Link to={`/movie/${data.imdbID}`}>
-            <div className="movie-list">
+            <div className="movie-list" onClick={() => redirectToMovieDetails(data.imdbID)}>
                 <div className="movie-image">
                     <img src={data.Poster} alt={data.Title} className="img-fluid" />
                 </div>   
@@ -22,9 +28,7 @@ export const MovieCard = (props: any) => {
                     </div>
                 </div> 
             </div>
-            </Link>
         </div>
-        
     </>
     )
 }

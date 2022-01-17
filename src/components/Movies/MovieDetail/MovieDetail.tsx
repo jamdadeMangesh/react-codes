@@ -1,29 +1,28 @@
 import React from 'react';
-import { useParams } from "react-router";
 import { useEffect } from 'react';
 import MovieApi from '../../../features/ReduxMovies/api/MovieApi';
 import { APIKey } from './../../../features/ReduxMovies/api/MovieKeyApi';
 import { useDispatch, useSelector } from 'react-redux';
-import { movieDetails, removeMovieDetails } from '../../../features/ReduxMovies/MovieSlice/MovieSlice';
+import { movieDetails, removeMovieDetails, getMovieDetailsId } from '../../../features/ReduxMovies/MovieSlice/MovieSlice';
 import { getMovieDetails } from './../../../features/ReduxMovies/MovieSlice/MovieSlice';
 import "./MovieDetail.scss";
 import { useNavigate  } from 'react-router-dom'
 import { Loader } from './../../Loader/Loader';
 
 const MovieDetail = () => {
-    const { imdbID } = useParams();
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const movie_id = useSelector(getMovieDetailsId);
     useEffect(() => {
         const fetchMovies = async () =>  {
-            const response = await MovieApi.get(`?apikey=${APIKey}&i=${imdbID}&Plot=Full`)
+            const response = await MovieApi.get(`?apikey=${APIKey}&i=${movie_id}&Plot=Full`)
             .catch((err) => {
                 console.log("error :" +err);
             });
             dispatch(movieDetails(response?.data));
         }
         fetchMovies();
-    },[dispatch, imdbID]);
+    },[dispatch, movie_id]);
 
     const goBackToMovie = () => {
         dispatch(removeMovieDetails());

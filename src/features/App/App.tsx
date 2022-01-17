@@ -37,7 +37,7 @@ function App() {
 						<Route path='/toasts' element={<ToastsList/>} />
 						<Route path='/data-with-json' element={<DataWithJSON/>} />
 						<Route path='/redux' element={<ReduxMovies />} />
-						<Route path='/movie/:imdbID' element={<MovieDetail />} />
+						<Route path='/movie-details' element={<MovieDetail />} />
 						<Route path='/post-api' element={<PostAPI />} />
 						<Route path='/post-api/add' element={<AddData />} />
 						<Route path='/post-api/edit/:id' element={<EditData />} />
