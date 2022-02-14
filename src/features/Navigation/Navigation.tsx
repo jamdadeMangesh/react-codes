@@ -144,6 +144,30 @@ export function Navigation (){
                         </div>
                     </Link>
                 </div>
+                <div className="col-6 col-md-3">
+                    <Link to ="/react-hooks-form">
+                        <div className="navigation-card mb-4">
+                            <div className="navigation-card__count">
+                                7
+                            </div>
+                            <div className="navigation-card__title">
+                                React Hooks Form
+                            </div>
+                        </div>
+                    </Link>
+                </div>
+                <div className="col-6 col-md-3">
+                    <Link to ="/filter-with-checkboxes">
+                        <div className="navigation-card mb-4">
+                            <div className="navigation-card__count">
+                                8
+                            </div>
+                            <div className="navigation-card__title">
+                                Filter With Checkboxes
+                            </div>
+                        </div>
+                    </Link>
+                </div>
             </div>
 
             <h5 className="mb-4 mt-4">Other</h5>

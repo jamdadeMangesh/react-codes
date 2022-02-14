@@ -1,9 +1,14 @@
 import axios from "axios";
 import React, { useEffect } from "react";
+// import { useNavigate } from "react-router";
+// import { useDispatch } from 'react-redux';
 import "../PostAPI.scss";
+//import { setEmpDetailsId } from "../PostSlice/PostSlice";
 
 export function ShowData() {
     const [empInfo, setEmpInfo] = React.useState([]);
+    // const navigate = useNavigate();
+    // const dispatch = useDispatch();
     const getApiData = () => {
         axios.get("https://61cd7c867067f600179c5ac9.mockapi.io/react-crud/")
             .then((response) => setEmpInfo(response.data))
@@ -11,6 +16,11 @@ export function ShowData() {
     useEffect(() => {
         getApiData();
     }, [])
+    // const redirectToEdit = (empDetailId: any) => {
+    //     console.log("empDetailId :", empDetailId);
+    //     dispatch(setEmpDetailsId(empDetailId));
+    //     navigate("/post-api/add");
+    // }
     const onDelete = (id: any) => {
         axios.delete(`https://61cd7c867067f600179c5ac9.mockapi.io/react-crud/${id}`).then(() => getApiData())
 
@@ -43,7 +53,7 @@ export function ShowData() {
                                             <i className="fa fa-trash color-red" onClick={() => onDelete(emp.id)}></i>
                                         </td>
                                         {/* <td>
-                                        <Link to={`/post-api/edit/${emp.id}`}><i className="fa fa-pencil color-blue"></i></Link>
+                                        <i className="fa fa-pencil color-blue" onClick={() => redirectToEdit(emp.id)}></i>
                                         </td> */}
                                     </tr>
                                 )

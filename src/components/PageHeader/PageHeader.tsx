@@ -12,7 +12,7 @@ export function PageHeader(props: {
                 {pageTitle}
             </div>
             <div className="page-header__back">
-                <Link to="/">Back</Link>
+                <Link to="/dashboard">Back</Link>
             </div>
         </div>
     )

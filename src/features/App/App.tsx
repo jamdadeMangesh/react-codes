@@ -21,6 +21,10 @@ import { RadioButtons } from '../RadioButtons/RadioButtons';
 import { FilterWithApi } from '../FilterWithApi/FilterWithApi';
 import PageNotFound from './../../components/PageNotFound/PageNotFound';
 import ProgressiveWebApp from './../../components/ProgressiveWebApp/ProgressiveWebApp';
+import ReactHooksForm from '../ReactHooksForm/ReactHooksForm';
+import Login from '../Authentication/Login/Login';
+import Register from '../Authentication/Register/Register';
+import { FilterCheckbox } from '../Checkboxes/FilterCheckbox';
 
 function App() {
 	return (
@@ -29,7 +33,9 @@ function App() {
 				<Router>
 					<Routes>
 						<Route path='*' element={<PageNotFound />} />
-						<Route path='/' element={<Home/>} />
+						<Route path='/' element={<Login/>} />
+						<Route path='/register' element={<Register/>} />
+						<Route path='/dashboard' element={<Home/>} />
 						<Route path='/home' element={<Home/>} />
 						<Route path='/buttons' element={<ButtonsList/>} />
 						<Route path='/data-with-api' element={<DataWithApi/>} />
@@ -45,7 +51,8 @@ function App() {
 						<Route path='/radio' element={<RadioButtons />} />
 						<Route path='/filter-data-with-api' element={<FilterWithApi />} />
 						<Route path='/progressive-web-app' element={<ProgressiveWebApp />} />
-						
+						<Route path='/react-hooks-form' element={<ReactHooksForm />} />
+						<Route path='/filter-with-checkboxes' element={<FilterCheckbox />} />
 					</Routes>
 				</Router>
 			</div>

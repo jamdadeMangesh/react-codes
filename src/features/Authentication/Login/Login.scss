@@ -1,0 +1,22 @@
+@import "../../../variables/variables.scss";
+
+.login {
+  &-bg {
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &-card {
+    width: 450px;
+    background: #fff;
+    @include box-shadow(0px 2px 13px 1px rgba(0, 0, 0, 0.1));
+    padding: 40px 40px 20px;
+  }
+  .disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+}

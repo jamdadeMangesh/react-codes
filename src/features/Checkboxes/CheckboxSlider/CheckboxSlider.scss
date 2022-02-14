@@ -1,0 +1,33 @@
+@import "../../../variables/variables.scss";
+
+.checkboxSlider {
+  background-color: #fff;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  right: 0px;
+  top: 0px;
+  height: 100%;
+  width: 30%;
+  padding: 40px 20px;
+  z-index: 2;
+  &-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  &-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    i {
+      font-size: 20px;
+    }
+  }
+  &-filter {
+    flex: 1 1 auto;
+  }
+  .checkBoxDiv {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -1,11 +1,13 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { useNavigate, useParams } from "react-router";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router";
 import { Buttons } from "../../../components/Buttons/Buttons";
 import { PageHeader } from "../../../components/PageHeader/PageHeader";
+import { getEmpDetailsId } from "../PostSlice/PostSlice";
 
 export function EditData() {
-    const { id } = useParams();
+    const  emp_id  = useSelector(getEmpDetailsId);
     const [empInfo, setEmpInfo] = useState<any>([]);
     // const [firstName, setFirstName] = useState("");
     // const [lastName, setLastName] = useState("");
@@ -13,10 +15,12 @@ export function EditData() {
     // const [designation, setDesignation] = useState("");
     
     const getApiData = async() => {
-        await axios.get(`https://61cd7c867067f600179c5ac9.mockapi.io/react-crud/${id}`)
+        await axios.get(`https://61cd7c867067f600179c5ac9.mockapi.io/react-crud/${emp_id}`)
             .then((response) => setEmpInfo(response.data))
     }
     getApiData();
+
+    const empValue = {firstName: empInfo.firstName, lastName: empInfo.lastName, email: empInfo.email, designation: empInfo.designation}
     
 
     const navigate = useNavigate();
@@ -25,7 +29,7 @@ export function EditData() {
             setEmpInfo({...empInfo, [name]: value});
         }
         const updateData = () => {
-            axios.put(`https://61cd7c867067f600179c5ac9.mockapi.io/react-crud/${id}`, empInfo)
+            axios.put(`https://61cd7c867067f600179c5ac9.mockapi.io/react-crud/${emp_id}`, empInfo)
             .then(response => setEmpInfo(empInfo))
             .then(response => navigate("/post-api"));
         }
@@ -50,7 +54,7 @@ export function EditData() {
                             <input 
                                 type="text" 
                                 className="form-control" 
-                                value={empInfo.firstName}
+                                value={empValue.firstName}
                                 onChange={onInputChange}  
                                 placeholder="Enter First Name" 
                             />
@@ -62,7 +66,7 @@ export function EditData() {
                             <input 
                                 type="text" 
                                 className="form-control" 
-                                value={empInfo.lastName}
+                                value={empValue.lastName}
                                 onChange={onInputChange}  
                                 placeholder="Enter Last Name" 
                             />
@@ -76,7 +80,7 @@ export function EditData() {
                         type="email" 
                         className="form-control" 
                         placeholder="Enter email" 
-                        value={empInfo.email}
+                        value={empValue.email}
                         onChange={onInputChange}  
                     />
                     
@@ -87,7 +91,7 @@ export function EditData() {
                         type="text" 
                         className="form-control" 
                         placeholder="Enter Designation" 
-                        value={empInfo.designation}
+                        value={empValue.designation}
                         onChange={onInputChange}  
                     />
                 </div>
